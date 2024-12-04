@@ -1,21 +1,27 @@
-const Navbar = ({ c, e }) => {
-  return (
-    <div className="p-5 w-full flex flex-col md:flex-row justify-between items-center bg-gray-700">
-      <div className="flex flex-row space-x-3 mb-3 md:mb-0">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/game-logo-img.png"
-          alt="logo"
-          className="h-8 w-8"
-        />
-        <h1 className="text-lg md:text-2xl text-white">Emoji Game</h1>
-      </div>
+import React from "react";
 
-      <div className="flex flex-row space-x-3">
-        <h1 className="text-sm md:text-lg text-white">Score: {c}</h1>
-        <h1 className="text-sm md:text-lg text-white">Top Score: {e}</h1>
+export default function Navbar({ count, timer }) {
+  return (
+    <div className="flex flex-col sm:flex-row justify-between items-center bg-gradient-to-l from-blue-400 via-purple-500 to-pink-500 w-full p-3 mb-10">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png"
+        alt="img"
+        className="h-10 w-25"
+      />
+      <div className="flex flex-col sm:flex-row sm:space-x-5 pr-5 mt-3 sm:mt-0">
+        <div className="flex flex-row space-x-2">
+          <h1 className="text-white text-xl">Score:</h1>
+          <h1 className="text-yellow-300 text-xl">{count}</h1>
+        </div>
+        <div className="flex flex-row space-x-2">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/match-game-timer-img.png"
+            alt="img"
+            className="h-7 w-7"
+          />
+          <h1 className="text-yellow-300 text-xl">{timer} Sec</h1>
+        </div>
       </div>
     </div>
   );
-};
-
-export default Navbar;
+}
